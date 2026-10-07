@@ -5,7 +5,7 @@
  *********************************************/
 
 execute {
-  cplex.tilim = 43200;
+  cplex.tilim = 3600;
 }
 
 int N_QUERIES = ...;
@@ -105,4 +105,26 @@ execute VERIFY_ROUTING_FEASIBLE {
       writeln("!! solution infeasible at query " + q);
     }
   }
+}
+execute DISPLAY_RESULT {
+  writeln("index candidates (x)");
+  for (var i in Indexes) {
+    write("idx_" + (i - 1) + ",");
+    for (var r in Replicas) {
+      if (x[i][r] == 1) {
+        write("" + r - 1 + ",");
+      }
+    } 
+    writeln("");
+  }     
+  writeln("routing function (t)");
+  for (var q in Queries) {
+    for (var r in Replicas) {
+      if (t[q][r] == 1) {
+        write("" + r - 1);
+      }   
+    }         
+    write(",");
+  }   
+  writeln("");
 }
