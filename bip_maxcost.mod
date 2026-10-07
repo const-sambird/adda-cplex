@@ -3,6 +3,11 @@
  * Author: sam
  * Creation Date: Feb 27, 2026 at 2:17:40 PM
  *********************************************/
+
+execute {
+  cplex.tilim = 43200;
+}
+
 int N_QUERIES = ...;
 int N_UPDATES = ...;
 int N_REPLICAS = ...;
