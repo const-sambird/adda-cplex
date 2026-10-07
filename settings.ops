@@ -2,9 +2,9 @@
 
 <settings version="2">
   <category name="cp">
-    <setting name="timelimit" value="21600.0"/>
+    <setting name="timelimit" value="43200.0"/>
   </category>
   <category name="cplex">
-    <setting name="tilim" value="21600.0"/>
+    <setting name="tilim" value="43200.0"/>
   </category>
 </settings>
